@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: black
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #100525;
+}
+
+#formCadastro {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffd5;
+    border-radius: 7px;
+    padding: 40px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+    gap: 3px;
+    animation: flipForm 2s;
+}
+
+@keyframes flipForm {
+    from {
+        transform: rotateX(90deg);
+    }
+    to{
+        transform: rotateX(0deg)
+    }
+}
+
+#formCadastro h1 {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: 2.3em;
+    text-align: center;
+}
+
+#formCadastro p {
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+#formCadastro input {
+    padding: 4px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 4px;
+    transition: all linear 160ms;
+    outline: none;
+}
+
+
+#formCadastro input:focus {
+    border: 1px solid #000;
+}
+
+#formCadastro label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.container-nome {
+    display: flex;
+    gap: 37px;
+}
+
+.nome{
+    display: inline-block;
+}
+
+.nome input {
+    display: block;
+    margin-right: 90px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.senha label {
+    display: block;
+}
+
+.senha input{
+    width: 40%;
+}
+
+.btn {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    align-items: center;
+    background-color: #0e4eb4;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    border: none !important;
+    transition: all linear 160ms;
+    cursor: pointer;
+    margin: 0 !important;
+
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: #0e4eb4;
+
+}
+
+#confirmPassword-text {
+    padding: 3px;
+    color: red;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+.password-strenght-bar{
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.strenght-indicator{
+    height: 100%;
+    width: 0;
+    background-color: red;
+    transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+.password-strenght-text{
+    color:#666;
+    font-size: 0.9rem;
+}
+
+#tip{
+    font-style: italic;
+    color:#666;
+    font-size: 0.8rem;
+    max-width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
