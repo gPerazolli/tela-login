@@ -18,8 +18,11 @@
             <p>Digite os seus dados de acesso no campo abaixo.</p>
             <label for="email">E-mail</label>
             <input type="email" id="email" placeholder="Digite seu e-mail" autofocus="true" name="email"/>
-            <label for="password">Senha</label>
-            <input type="password" id="password" placeholder="Digite sua senha" name="senha"/>
+            <div class="container-senha">
+                <label for="password">Senha</label>
+                <input type="password" id="password" placeholder="Digite sua senha" name="senha"/>
+                <i class="fa-regular fa-eye" id="toggle-password"></i>
+            </div>
             <span><a href="/">Esqueci minha senha</a></span>
             <input type="submit" value="Acessar" class="btn" onclick="validateForm(event)"/>
             <p>Não tem uma conta? <a href="cadastro.html">Inscrever-se</a></p>

@@ -80,7 +80,6 @@ body {
     outline: none;
 }
 
-
 #formLogin input:focus {
     border: 1px solid #000;
 }
@@ -112,6 +111,20 @@ body {
     font-weight: 500;
     padding: 0;
     
+}
+
+.container-senha{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#toggle-password{
+    position:absolute;
+    left: 90%;
+    top: 43%;
+    display: none;
+    cursor: pointer;
 }
 
 .btn {

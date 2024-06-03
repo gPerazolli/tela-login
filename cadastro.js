@@ -1,6 +1,7 @@
 const passwordInput = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirmPassword");
 const confirmPasswordText = document.querySelector("#confirmPassword-text");
+const togglePassword = document.querySelector("#toggle-password");
 
 passwordInput.addEventListener("input", function () {
     
@@ -83,6 +84,30 @@ confirmPassword.addEventListener("input", function(){
     }
 
 })
+
+confirmPassword.addEventListener("focus", function(){
+
+    togglePassword.style.display = "block";
+})
+
+confirmPassword.addEventListener("blur", function(){
+
+    togglePassword.style.display = "none";
+})
+
+// Alterna a visibilidade da senha quando o ícone é clicado
+togglePassword.addEventListener("mousedown", function(event) {
+    
+    event.preventDefault();
+
+    const type = confirmPassword.type  === "password" ? "text" : "password";
+    confirmPassword.type = type;
+    password.type = type;
+    
+
+    this.classList.toggle("fa-eye");
+    this.classList.toggle("fa-eye-slash");
+});
 
 function validateForm(event){
     event.preventDefault();

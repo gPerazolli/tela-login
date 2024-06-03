@@ -91,12 +91,24 @@ body {
     box-sizing: border-box;
 }
 
+.senha{
+    position: relative;
+}
+
 .senha label {
     display: block;
 }
 
 .senha input{
     width: 40%;
+}
+
+#toggle-password{
+    position: absolute;
+    left: 37%;
+    top: 40%;
+    cursor: pointer;
+    display: none;
 }
 
 .btn {
