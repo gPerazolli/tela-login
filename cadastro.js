@@ -3,6 +3,7 @@ const confirmPassword = document.querySelector("#confirmPassword");
 const confirmPasswordText = document.querySelector("#confirmPassword-text");
 const togglePassword = document.querySelector("#toggle-password");
 
+//input de senhas
 passwordInput.addEventListener("input", function () {
     
     const password = this.value;
@@ -10,6 +11,7 @@ passwordInput.addEventListener("input", function () {
     const strenghtIndicator = document.querySelector("#password-strenght-indicator");
 
     const strenghtText = document.querySelector("#password-strenght-text");
+    const strenghtBar = document.querySelector(".password-strenght-bar");
 
     const strenghts = {
         0: "Muito Fraca",
@@ -56,9 +58,11 @@ passwordInput.addEventListener("input", function () {
 
     if(password.length > 0){
         strenghtText.innerHTML =  `Força: ${strenghts[score]}`;
+        strenghtBar.style.display = "block";
 
     }else{
         strenghtText.innerHTML = "";
+        strenghtBar.style.display = "none";
     }
 
     if(password == confirmPassword){
@@ -70,6 +74,7 @@ passwordInput.addEventListener("input", function () {
 
 })
 
+//confirmar senha informando mensagem 
 confirmPassword.addEventListener("input", function(){
     
     const confirmPassword = this.value
@@ -85,6 +90,8 @@ confirmPassword.addEventListener("input", function(){
 
 })
 
+
+//alterna quando aparece o olho de ver a senha 
 confirmPassword.addEventListener("focus", function(){
 
     togglePassword.style.display = "block";
@@ -95,20 +102,50 @@ confirmPassword.addEventListener("blur", function(){
     togglePassword.style.display = "none";
 })
 
+
 // Alterna a visibilidade da senha quando o ícone é clicado
 togglePassword.addEventListener("mousedown", function(event) {
     
     event.preventDefault();
-
+    
     const type = confirmPassword.type  === "password" ? "text" : "password";
     confirmPassword.type = type;
     password.type = type;
     
-
+    
     this.classList.toggle("fa-eye");
     this.classList.toggle("fa-eye-slash");
 });
+    
+const emailInput = document.querySelector("#email");
+const resultMessage = document.querySelector("#email-message");
+    
+emailInput.addEventListener("input", function(event) {
 
+    event.preventDefault();
+
+    const email = emailInput.value;
+
+    //validar email
+    const isValid = validateEmail(email);
+
+    if(isValid) {
+        resultMessage.textContent = "";
+
+    }else{
+        resultMessage.textContent = "E-mail inválido!";
+    }
+})
+
+//funçaõ de validção
+const validateEmail = (email) => {
+
+    const regex = /^[^\s]+@[^\s]+\.[^\s]+$/;
+    return regex.test(email);
+}
+
+
+//envia o formulario validando
 function validateForm(event){
     event.preventDefault();
 

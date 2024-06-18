@@ -15,49 +15,51 @@
 
             <h1>Cadastra-se</h1>
 
-            <p>Digite os seus dados nos campo abaixo.</p>
-            <div class="container-nome">
-                <div class="nome">
-                    <label for="nome">Nome</label>
-                    <input type="nome" id="nome" name="nome" required/>
+            <p class="form__description">Digite os seus dados nos campo abaixo.</p>
+            <div class="container">
+                <div class="container__input">
+                    <input type="text" id="nome" class="input" name="nome" required/>
+                    <label for="nome" class="label">Nome</label>
                 </div>
-                <div class="nome">
-                    <label for="sobrenome">Sobrenome</label>
-                    <input type="sobrenome" id="sobrenome" name="sobrenome"required/>
+                <div class="container__input">
+                    <input type="text" id="sobrenome"  name="sobrenome" class="input" required/>
+                    <label for="sobrenome" class="label">Sobrenome</label>
                 </div>
             </div>
+            <div class="container__input">
+                <input type="email" id="email" name="email" class="input" required/>
+                <label for="email" class="label">E-mail</label>
+                <span id="email-message"></span>
+            </div>
 
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required/>
-
-            <div class="container-senha">
-                <div class="senha">
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" required/>
+            <div >
+                <div class="container__input">
+                    <input type="password" id="password" class="input" required/>
+                    <label for="password" class="label">Senha</label>
                 </div>
-                <div class="senha"> 
-                    <label for="password">Confirmar Senha</label>
-                    <input type="password" id="confirmPassword" required/>  
+                <div class="container__input"> 
+                    <input type="password" id="confirmPassword" class="input" required/>  
+                    <label for="password" class="label">Confirmar Senha</label>
                     <i class="fa-regular fa-eye-slash" id="toggle-password"></i>
                     <span id="confirmPassword-text" ></span>
                 </div>
             </div>
 
-            <input type="hidden" name="_captcha" value="false"/>
-            <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html"/>
-
-            <div class="password-strenght-bar">
-                <div id="password-strenght-indicator" class="strenght-indicator">
-                </div>
-            </div>
-
-            <p id="password-strenght-text"></p>
             <p id="tip">
                 Sua senha precisa conter letras minúsculas, maiúsculas, números e caracteres especias.
             </p>
 
-            <div>
-                <input type="submit" value="Cadastrar-se" class="btn" onclick="validateForm(event)"/>
+            <input type="hidden" name="_captcha" value="false"/>
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html"/>
+
+            <div class="password-strenght-bar">
+                <div id="password-strenght-indicator" class="strenght-indicator"></div>
+            </div>
+            <p id="password-strenght-text"></p>
+
+            <div class="container-button">
+                <a href="./index.html" class="btn btn-cancelar">Cancelar</a>
+                <button type="submit" class="btn btn-confirmar" onclick="validateForm(event)">Cadastrar-se</button>
             </div>
 
         </form>
