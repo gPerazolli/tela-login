@@ -116,47 +116,4 @@ togglePassword.addEventListener("mousedown", function(event) {
     this.classList.toggle("fa-eye");
     this.classList.toggle("fa-eye-slash");
 });
-    
-const emailInput = document.querySelector("#email");
-const resultMessage = document.querySelector("#email-message");
-    
-emailInput.addEventListener("input", function(event) {
 
-    event.preventDefault();
-
-    const email = emailInput.value;
-
-    //validar email
-    const isValid = validateEmail(email);
-
-    if(isValid) {
-        resultMessage.textContent = "";
-
-    }else{
-        resultMessage.textContent = "E-mail inválido!";
-    }
-})
-
-//funçaõ de validção
-const validateEmail = (email) => {
-
-    const regex = /^[^\s]+@[^\s]+\.[^\s]+$/;
-    return regex.test(email);
-}
-
-
-//envia o formulario validando
-function validateForm(event){
-    event.preventDefault();
-
-    var nome = document.getElementById("nome").value;
-    var sobrenome = document.getElementById("sobrenome").value;
-    var email = document.getElementById("email").value;
-
-    if(nome.trim() === '' || sobrenome.trim() === '' || email.trim() === ''){
-        alert("Preencha todos os campos!");
-        return;
-    }
-
-    document.getElementById("formCadastro").submit();
-}

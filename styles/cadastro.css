@@ -8,7 +8,8 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    color: black
+    color: black;
+    background-color: #100525;
 }
 
 .page {
@@ -18,8 +19,8 @@ body {
     align-content: center;
     justify-content: center;
     width: 100%;
-    height: 100vh;
-    background-color: #100525;
+    margin: 50px 0;
+   
 }
 
 #formCadastro {
@@ -61,7 +62,7 @@ body {
 
 #formCadastro input {
     padding: 10px;
-    border: 1.5px solid #000000;
+    border: 1.5px solid #9b9b9b;
     font-size: 16px;
     border-radius: 4px;
     margin-top: 5px;
@@ -88,7 +89,22 @@ body {
     display: inline-block;
     position: relative;
     width: 100%;
+}
 
+.container-endereco{
+    display: none;
+}
+
+#invalid-cep{
+    padding: 3px;
+    color: red;
+    font-style: italic;
+    font-size: 0.8rem;
+    max-width: 45%;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    align-self: center;
+    margin-left: 10px;
 }
 
 .input {
@@ -122,11 +138,59 @@ input:-webkit-autofill{
     width: 80%;
 }
 
+#endereco{
+    width: 100%;
+}
+
+#numero, #estado{
+    width: 40%;
+}
+
+#complemento, #bairro{
+    width: 45%;
+}
+
+.container__cep{
+    display: flex;
+    text-align: center;
+}
+
+#cep{
+    width: 25%;
+    margin-right: 0;
+
+}
+
+.container__cep #cep{
+    border-right: 0;
+    border-radius: 4px 0 0 4px;
+}
+
+#search{
+    margin-left: 0;
+    padding: 10px 20px;
+    border-radius: 0 4px 4px 0;
+    border-left: 0;
+    border: 1.5px solid #000000;
+    cursor: pointer;
+    background-color:#d4d4d4;
+    height: 50%;
+    margin-top: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    
+}
+
+#search:hover{
+    box-shadow: 3px 3px 3px #c2c2c2 inset;
+}
+
 #email-message{
     padding: 3px;
     color: red;
     font-style: italic;
     font-size: 0.8rem;
+    margin-left: 7px;
 }
 
 #toggle-password{
@@ -199,6 +263,7 @@ input:-webkit-autofill{
     color: red;
     font-style: italic;
     font-size: 0.8rem;
+    margin-left: 7px;
 }
 
 .password-strenght-bar{

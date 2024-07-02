@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <link rel="stylesheet" href="./styles/cadastro.css">
     <link rel="stylesheet" href="icones/css/all.min.css">
-    <script src="cadastro.js" defer></script>
+
+    <script src="./javascript/cadastro.js" defer></script>
+    <script src="./javascript/cadastro-password.js" defer></script>
+    <script src="./javascript/cadastro-validation.js" defer></script>
 
 </head>
 <body>
@@ -26,13 +30,54 @@
                     <label for="sobrenome" class="label">Sobrenome</label>
                 </div>
             </div>
+
             <div class="container__input">
                 <input type="email" id="email" name="email" class="input" required/>
                 <label for="email" class="label">E-mail</label>
                 <span id="email-message"></span>
             </div>
+            <div class="container__input">
+                <div class="container__cep">
+                    <input type="text" id="cep" class="input" required />
+                    <label for="text" class="label">CEP</label>
+                    <button id="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <span id="invalid-cep"></span>
+                </div>
+            </div>
 
-            <div >
+            
+            <div class="container-endereco">
+                <div class="container">
+                    <div class="container__input">
+                    <input type="text" id="endereco" class="input" required/>
+                        <label for="text" class="label">Endereço</label>
+                    </div>
+                    <div class="container__input">
+                        <input type="text" id="numero" class="input" required/>
+                        <label for="text" class="label">Número</label>
+                    </div>
+                </div>
+                <div class="container__input">
+                    <input type="text" id="complemento" class="input" required/>
+                    <label for="text" class="label">Complemento</label>
+                </div>
+                <div class="container__input">
+                    <input type="text" id="bairro" class="input" required/>
+                    <label for="text" class="label">Bairro</label>
+                </div>
+                <div class="container">
+                    <div class="container__input">
+                        <input type="text" id="cidade" class="input" required/>
+                        <label for="text" class="label">Cidade</label>
+                    </div>
+                    <div class="container__input">
+                        <input type="text" id="estado" class="input" required/>
+                        <label for="text" class="label">Estado</label>
+                    </div>
+                </div>
+            </div>
+
+            <div>
                 <div class="container__input">
                     <input type="password" id="password" class="input" required/>
                     <label for="password" class="label">Senha</label>
