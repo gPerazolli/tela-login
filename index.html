@@ -10,10 +10,19 @@
 
     <script src="./js/app.js" defer></script>
     <script src="./js/index-password.js" defer></script>
+    <script src="./js/dark-mode.js" defer></script>
 
 </head>
-<body>
+<body class="light-theme">
     <div class="page">
+        <navbar class="cabecalho">
+            <div class="cabecalho__dark-mode">
+                <label class="cabecalho__switch">
+                    <input type="checkbox" class="cabecalho__switch-input">
+                    <span class="cabecalho__switch-slider"></span>
+                </label>
+            </div>
+        </navbar>
         <form method="POST" action="https://formsubmit.co/email" id="formLogin">
 
             <h1>Login</h1>
